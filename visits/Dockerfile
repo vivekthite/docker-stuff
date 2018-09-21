@@ -1,11 +1,10 @@
 # base image
-FROM alpine
+FROM node:alpine
 
 # specify work dir on which to execute further commands
-WORKDIR /usr/app
+WORKDIR /app
 
 # Download and install dependency
-RUN apk add --update nodejs npm
 COPY ./package.json ./ 
 RUN npm i
 COPY ./ ./
